@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:spotify_music_app/core/configs/assets/app_images.dart';
 import 'package:spotify_music_app/core/widgets/green_rectangular_button.dart';
 import 'package:spotify_music_app/core/widgets/spotify_logo.dart';
+import 'package:spotify_music_app/presentation/intro/pages/theme_selection_page.dart';
 
 class GetStartedPage extends StatelessWidget {
   static const route = "/get-started";
@@ -47,6 +49,9 @@ class GetStartedPage extends StatelessWidget {
                         fontWeight: FontWeight.w500)),
               ),
               GreenRectangularButton(
+                onpressed: () {
+                  context.go(ThemeSelectionPage.route);
+                },
                 text: "Get Started",
               ),
             ],
