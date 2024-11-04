@@ -3,9 +3,11 @@ import 'package:spotify_music_app/core/configs/theme/color_palette.dart';
 
 class GreenRectangularButton extends StatelessWidget {
   final String text;
+  final void Function() onpressed;
   const GreenRectangularButton({
     super.key,
     required this.text,
+    required this.onpressed,
   });
 
   @override
@@ -13,7 +15,9 @@ class GreenRectangularButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 24),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          onpressed();
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: ColorPalette.primary,
           shape: RoundedRectangleBorder(

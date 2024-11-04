@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:spotify_music_app/core/configs/theme/color_palette.dart';
+import 'package:spotify_music_app/core/routers/router.dart';
+import 'package:spotify_music_app/core/widgets/spotify_logo.dart';
 import 'package:spotify_music_app/presentation/intro/pages/get_started_page.dart';
 
 class Splash extends StatefulWidget {
@@ -22,15 +24,13 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorPalette.lightbackground,
-      body: Center(child: SvgPicture.asset("assets/vectors/logo.svg")),
+      body: Center(child: SpotifyLogo()),
     );
   }
 
   Future<void> redirect() async {
     await Future.delayed(const Duration(seconds: 2));
     if (!mounted) return;
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-      return const GetStartedPage();
-    }));
+    context.go(GetStartedPage.route);
   }
 }

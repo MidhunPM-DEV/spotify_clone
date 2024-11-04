@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_music_app/core/configs/theme/themes.dart';
+import 'package:spotify_music_app/core/routers/router.dart';
 import 'package:spotify_music_app/presentation/splash/pages/splash.dart';
 
 void main() {
@@ -12,9 +13,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: Themes.lightTheme,
-        home: const Splash());
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: router,
+      theme: Themes.lightTheme,
+    );
   }
 }
