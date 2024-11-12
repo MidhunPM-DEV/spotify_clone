@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:spotify_music_app/core/configs/assets/app_images.dart';
 import 'package:spotify_music_app/core/configs/assets/app_vectors.dart';
 import 'package:spotify_music_app/core/configs/theme/color_palette.dart';
@@ -73,7 +74,11 @@ class ThemeSelectionPage extends StatelessWidget {
                     )
                   ],
                 )),
-            GreenRectangularButton(text: "Continue", onpressed: () {})
+            GreenRectangularButton(
+                text: "Continue",
+                onpressed: () {
+                  context.go("/registerorloginpage");
+                })
           ])),
         ],
       ),
